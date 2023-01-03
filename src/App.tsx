@@ -7,28 +7,9 @@ import UserAddress from './components/UserAddress';
 import UserPicture from './components/UserPicture';
 import './App.css';
 
-// interface ApiProps {
-//   picture: 'string',
-//   first: 'string',
-//   last: 'string',
-//   name: 'string',
-//   dob: 'string',
-//   age: 'string',
-//   number: 'string',
-//   address: 'string',
-//   city: 'string',
-//   country: 'string',
-// }
-
 function App() {
 
   const [data, setData] = useState<UserData>({} as UserData);
-
-  // const fetchData = async (url: string) : Promise<ApiProps> => {
-  //   const response = await fetch(url)
-  //   const data = await response.json()
-  //   return data?.results[0]
-  // }
 
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault()
@@ -57,23 +38,6 @@ function App() {
     }
     fetchData();
   }, [])
-
-  // useEffect(() => {
-  //   const apiData = fetchData('https://randomuser.me/api/');
-  //     setData(async (prev) => {
-  //     const fullname = `${apiData.name.first} ${apiData.name.last}`;
-  //     return {
-  //       ...prev,
-  //       picture: apiData.picture.large,
-  //       name: fullname,
-  //       age: apiData.dob.age,
-  //       number: apiData.location.street.number,
-  //       address: apiData.location.street.name,
-  //       city: apiData.location.city,
-  //       country: apiData.location.country,
-  //       }
-  //     })
-  // },[]);
 
   const refreshPage = () =>{
     window.location.reload();
